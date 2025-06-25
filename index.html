@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Sahu | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #1e1f26;
+      --bg-light: #2c2f36;
+      --primary: #00bfa6;
+      --secondary: #ffffff;
+      --muted: #cccccc;
+      --card-bg: #282a33;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--bg-light);
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    #typing-effect {
+      color: var(--muted);
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0 0.75rem;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      background: var(--card-bg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--muted);
+      padding-bottom: 0.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .submit-btn {
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #009b87;
+      color: #fff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: var(--bg-light);
+      color: var(--secondary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--bg-light);
+      color: var(--muted);
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: inline-block;
+        margin: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+    <h1>Aditya Sahu</h1>
+    <p id="typing-effect"></p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Aditya Sahu, a BCA graduate and aspiring full-stack web developer. I thrive on building creative and user-centric digital solutions using modern technologies like the MERN stack. I enjoy solving problems and continuously improving my craft.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React.js, Node.js, Express.js</li>
+        <li>MongoDB, Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Forever Clothing</strong> – MERN-based e-commerce clothing site</li>
+        <li><strong>Personal Portfolio</strong> – This beautifully crafted portfolio site</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      <p>Email: adityacbsa29@gmail.com</p>
+      <p>GitHub: <a href="https://github.com/Aditya2458" target="_blank">github.com/Aditya2458</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/adityasahu28/" target="_blank">linkedin.com/in/adityasahu28</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Aditya Sahu. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const text = "BCA Graduate | Full-Stack Web Developer | Tech Enthusiast";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typing-effect").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+      }
+    }
+    window.onload = type;
+  </script>
+</body>
+</html>
